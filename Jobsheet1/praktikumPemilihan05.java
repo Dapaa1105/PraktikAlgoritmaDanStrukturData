@@ -10,8 +10,7 @@ public class praktikumPemilihan05 {
         double nilaiAkhir;
         String nilaiHuruf;
         String keterangan;
-        
-        
+
         System.out.println("Program Menghitung Nilai Akhir");
         System.out.println("======================");
         System.out.print("Masukkan nilai tugas: ");
@@ -25,7 +24,7 @@ public class praktikumPemilihan05 {
         System.out.println("======================");
 
         if (tugas < 0 || tugas > 100 || kuis < 0 || kuis > 100 ||
-            uts < 0 || uts > 100 || uas < 0 || uas > 100) {
+                uts < 0 || uts > 100 || uas < 0 || uas > 100) {
 
             System.out.println("Nilai tidak valid");
             System.out.println("======================");
@@ -59,7 +58,7 @@ public class praktikumPemilihan05 {
             System.out.println("Nilai Akhir : " + nilaiAkhir);
             System.out.println("Nilai Huruf : " + nilaiHuruf);
             System.out.println("======================");
-             System.out.println("======================");
+            System.out.println("======================");
             System.out.println(keterangan);
         }
 
