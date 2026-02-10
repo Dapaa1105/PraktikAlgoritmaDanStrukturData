@@ -1,4 +1,5 @@
 package Jobsheet1;
+
 import java.util.Scanner;
 
 public class praktikumPerulangan05 {
@@ -10,7 +11,6 @@ public class praktikumPerulangan05 {
 
         System.out.print("Masukkan NIM: ");
         nim = sc.nextLine();
-       
 
         System.out.print("Masukkan 2 digit terakhir NIM: ");
         n = sc.nextInt();
