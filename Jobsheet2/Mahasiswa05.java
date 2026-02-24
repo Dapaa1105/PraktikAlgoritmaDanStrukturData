@@ -1,17 +1,18 @@
 package Jobsheet2;
 
 public class Mahasiswa05 {
-    String nim;
-    String nama;
-    String kelas;
-    double ipk;
+    public String nim;
+    public String nama;
+    public String kelas;
+    public double ipk;
 
-    public Mahasiswa05(String nm, String nim, double ipk, String kls) {
-        this.nama = nm;
+    public Mahasiswa05(String nm, String nim, double ipk, String kls ){
+        nama = nm;
         this.nim = nim;
         this.ipk = ipk;
-        this.kelas = kls;
+        kelas = kls;
     }
+    
 
     void tampilkanInformasi() {
         System.out.println("NIM   : " + nama);
