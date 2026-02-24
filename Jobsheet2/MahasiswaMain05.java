@@ -1,4 +1,5 @@
 package Jobsheet2;
+
 public class MahasiswaMain05 {
     public static void main(String[] args) {
 
@@ -17,6 +18,8 @@ public class MahasiswaMain05 {
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
 
+        Mahasiswa05 mhsDafa = new Mahasiswa05("Dafa Naufal", "254107020086", 3.9, "TI-1G");
+        mhsDafa.tampilkanInformasi();
 
     }
 }
