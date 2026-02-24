@@ -36,6 +36,6 @@ public class MahasiswaDemo05 {
         System.out.println("Kelas  : " + arrayofMahasiswa05[2].kelas);
         System.out.println("IPK    : " + arrayofMahasiswa05[2].ipk);
         System.out.println("-------------------------------------");
-
+        
     }
 }
