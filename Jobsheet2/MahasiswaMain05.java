@@ -3,7 +3,7 @@ package Jobsheet2;
 public class MahasiswaMain05 {
     public static void main(String[] args) {
 
-        Mahasiswa05 mhs1 = new Mahasiswa05("Muhammad Ali Farhan", "2241720171", 3.55, "SI 2J");
+        Mahasiswa05 mhs1 = new Mahasiswa05(null, null, 0, null);
         mhs1.nim = "2241720171";
         mhs1.nama = "Muhammad Ali Farhan";
         mhs1.kelas = "SI 2J";
@@ -18,8 +18,10 @@ public class MahasiswaMain05 {
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
 
-        Mahasiswa05 mhsDafa = new Mahasiswa05("Dafa Naufal", "254107020086", 3.9, "TI-1G");
-        mhsDafa.tampilkanInformasi();
+        Mahasiswa05 mhsDafa = new Mahasiswa05(null, null, 0, null);
+        mhsDafa.nama = "Dafa Naufal";
+        mhsDafa.kelas = "TI-1G";
+        mhsDafa.ipk = 3.9;
 
     }
 }
