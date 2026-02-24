@@ -4,34 +4,29 @@ import java.util.Scanner;
 public class MataKuliahDemo05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MataKuliah05[] arrayofMataKuliah05 = new MataKuliah05[3];
-        String kode, nama, dummy;
-        int sks, jumlahJam;
+        System.out.println("Masukkan data mata kuliah");
+        int jumlahMk = sc.nextInt();
+        sc.nextLine();
+        MataKuliah05[] arrayofMataKuliah05 = new MataKuliah05[jumlahMk];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < jumlahMk; i++) {
             System.out.println("Masukkan data mata kuliah ke-" + (i + 1));
             System.out.print("Kode       : ");
-            kode = sc.nextLine();
+            String kode = sc.nextLine();
             System.out.print("Nama       : ");
-            nama = sc.nextLine();
+            String nama = sc.nextLine();
             System.out.print("SKS        : ");
-            dummy = sc.nextLine();
-            sks = Integer.parseInt(dummy);
+            int sks = sc.nextInt();
             System.out.print("Jumlah Jam : ");
-            dummy = sc.nextLine();
-            jumlahJam = Integer.parseInt(dummy);
-            System.out.println("--------------------------------");
+            int jumlahJamM = sc.nextInt(); 
+            sc.nextLine();
 
-            arrayofMataKuliah05[i] = new MataKuliah05(kode, nama, sks, jumlahJam);
+            arrayofMataKuliah05[i] = new MataKuliah05(kode, nama, sks, jumlahJamM);
         }
 
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Data mata kuliah ke-" + (i + 1));
-            System.out.println("Kode       : " + arrayofMataKuliah05[i].kode);
-            System.out.println("Nama       : " + arrayofMataKuliah05[i].nama);
-            System.out.println("SKS        : " + arrayofMataKuliah05[i].sks);
-            System.out.println("Jumlah Jam : " + arrayofMataKuliah05[i].jumlahJam);
-            System.out.println("--------------------------------");
+       System.out.println("\n====== Data Mata Kuliah ======");
+        for (MataKuliah05 mataKuliah : arrayofMataKuliah05) {
+            mataKuliah.cetakInfo();
         }
     }
 }
