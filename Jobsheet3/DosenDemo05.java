@@ -32,9 +32,15 @@ public class DosenDemo05 {
             d.tampilData();
             System.out.println();
             no++;
-           
 
         }
+        
+        DataDosen05.jumlahDosenPerJenisKelamin(arrayDosen05);
+        DataDosen05.rataRataUsiaDosen(arrayDosen05);
+        DataDosen05.infoDosenPalingTua(arrayDosen05);
+        DataDosen05.infoDosenPalingMuda(arrayDosen05);
+        
+
 
     }
 }
