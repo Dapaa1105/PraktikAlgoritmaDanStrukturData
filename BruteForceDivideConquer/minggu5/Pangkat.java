@@ -10,7 +10,7 @@ public class Pangkat {
 
     int pangkatBF(int a, int n) {
         int hasil = 1;
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             hasil = hasil * a;
         }
         return hasil;
