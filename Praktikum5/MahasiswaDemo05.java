@@ -31,11 +31,15 @@ public class MahasiswaDemo05 {
             list.tambah(m);
         }
 
-        System.out.println("\nData mahasiswa sebelum sorting:");
+        System.out.println("Data mahasiswa sebelum sorting:");
         list.tampil();
 
-        System.out.println("\nData mahasiswa setelah sorting (IPK DESC):");
+        System.out.println("Data mahasiswa setelah sorting (IPK DESC):");
         list.bubbleSort();
+        list.tampil();
+
+        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC):");
+        list.selectionSort();
         list.tampil();
     }
 }
