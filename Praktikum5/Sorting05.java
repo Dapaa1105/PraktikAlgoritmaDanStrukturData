@@ -27,11 +27,25 @@ public class Sorting05 {
         }
     }
 
-    void tampil(){
-        for (int i = 0; i<jumData; i++){
+    void tampil() {
+        for (int i = 0; i < jumData; i++) {
             System.out.print(data[i] + " ");
         }
         System.out.println();
+    }
+
+    void SelectionSort() {
+        for (int i = 0; i < jumData - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < jumData; j++) {
+                if (data[j] < data[min]) {
+                    min = j;
+                }
+            }
+            int temp = data[i];
+            data[i] = data[min];
+            data[min] = temp;
+        }
     }
 
 }
