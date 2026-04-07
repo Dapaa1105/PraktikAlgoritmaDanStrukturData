@@ -1,8 +1,12 @@
 package Praktikum5;
 
 public class MahasiswaBerprestasi05 {
-    Mahasiswa05[] listMhs = new Mahasiswa05[5];
+    Mahasiswa05[] listMhs;
     int idx;
+
+    MahasiswaBerprestasi05(int jumlah) {
+        listMhs = new Mahasiswa05[jumlah];
+    }
 
     int sequentialSearching(double cari) {
         int posisi = -1;
@@ -21,11 +25,9 @@ public class MahasiswaBerprestasi05 {
             mid = (left + right) / 2;
             if (cari == listMhs[mid].ipk) {
                 return (mid);
-            } 
-            else if (listMhs[mid].ipk > cari) {
+            } else if (listMhs[mid].ipk > cari) {
                 return findBinarySearch(cari, left, mid - 1);
-            } 
-            else {
+            } else {
                 return findBinarySearch(cari, mid + 1, right);
             }
         }
