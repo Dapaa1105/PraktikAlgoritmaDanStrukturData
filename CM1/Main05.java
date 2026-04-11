@@ -1,5 +1,7 @@
 package CM1;
 
+import java.util.Scanner;
+
 public class Main05 {
     public static void main(String[] args) {
         Mahasiswa05[] mhs = new Mahasiswa05[3];
@@ -25,20 +27,40 @@ public class Main05 {
         pinjam[4] = new Peminjaman05(mhs[0], buku[1], 6);
         pinjam[4].hitungDenda();
 
-        System.out.println("=== SEBELUM SORT ===");
-        for (int i = 0; i < pinjam.length; i++) {
-            System.out.println("Peminjaman ke-" + (i + 1));
-            pinjam[i].tampilInformasi();
-            System.out.println("--------------------");
-        }
+        Scanner sc = new Scanner(System.in);
+        int pilihan;
 
-        insertionSort(pinjam);
-        System.out.println("=== SETELAH SORT ===");
-        for (int i = 0; i < pinjam.length; i++) {
-            pinjam[i].tampilInformasi();
-            System.out.println("--------------------");
-        }
+        do {
+            System.out.println("=== MENU ===");
+            System.out.println("1. Tampilkan Pinjaman");
+            System.out.println("2. Sorting Berdasarkan Denda");
+            System.out.println("3. Cari Berdasarkan NIM");
+            System.out.println("4. Keluar");
+            pilihan = sc.nextInt();
 
+            if (pilihan == 1) {
+                System.out.println("Data Pinjaman:");
+                for (Peminjaman05 p : pinjam) {
+                    p.tampilInformasi();
+                    System.out.println();
+                }
+            } else if (pilihan == 2) {
+                insertionSort(pinjam);
+                System.out.println("Data Pinjaman Setelah Sorting:");
+                for (Peminjaman05 p : pinjam) {
+                    p.tampilInformasi();
+                    System.out.println();
+                }
+            } else if (pilihan == 3) {
+                System.out.print("Masukkan NIM yang ingin dicari: ");
+                int cariNIM = sc.nextInt();
+                cariByNIM(pinjam, cariNIM);
+            } else if (pilihan == 4) {
+                System.out.println("Terima kasih!");
+            } else {
+                System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        } while (pilihan != 4);
     }
 
     static void insertionSort(Peminjaman05[] data) {
