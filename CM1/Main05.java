@@ -34,7 +34,7 @@ public class Main05 {
             System.out.println("=== MENU ===");
             System.out.println("1. Tampilkan Pinjaman");
             System.out.println("2. Sorting Berdasarkan Denda");
-            System.out.println("3. Cari Berdasarkan NIM");
+            System.out.println("3. Cari Berdasarkan Nama");
             System.out.println("4. Keluar");
             pilihan = sc.nextInt();
 
@@ -52,9 +52,9 @@ public class Main05 {
                     System.out.println();
                 }
             } else if (pilihan == 3) {
-                System.out.print("Masukkan NIM yang ingin dicari: ");
-                int cariNIM = sc.nextInt();
-                cariByNIM(pinjam, cariNIM);
+                System.out.print("Masukkan nama yang ingin dicari: ");
+                String cariNama = sc.next();
+                cariByNama(pinjam, cariNama);
             } else if (pilihan == 4) {
                 System.out.println("Terima kasih!");
             } else {
@@ -75,17 +75,17 @@ public class Main05 {
         }
     }
 
-    static void cariByNIM(Peminjaman05[] data, int cari) {
+    static void cariByNama(Peminjaman05[] data, String cari) {
         boolean ditemukan = false;
         for (int i = 0; i < data.length; i++) {
-            if (data[i].mhs.nim == cari) {
+            if (data[i].mhs.nama.equalsIgnoreCase(cari)) {
                 System.out.println("Data ditemukan:");
                 data[i].tampilInformasi();
                 ditemukan = true;
             }
         }
         if (!ditemukan) {
-            System.out.println("Data dengan NIM " + cari + " tidak ditemukan.");
+            System.out.println("Data dengan nama " + cari + " tidak ditemukan.");
         }
     }
 }
