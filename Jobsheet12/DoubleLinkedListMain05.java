@@ -56,4 +56,16 @@ public class DoubleLinkedListMain05 {
         scan.close();
     }
 
+    public static Mahasiswa05 inputMahasiswa(Scanner scan) {
+        System.out.print("Masukkan NIM   : ");
+        String nim = scan.nextLine();
+        System.out.print("Masukkan Nama  : ");
+        String nama = scan.nextLine();
+        System.out.print("Masukkan Kelas : ");
+        String kelas = scan.nextLine();
+        System.out.print("Masukkan IPK   : ");
+        double ipk = scan.nextDouble();
+        scan.nextLine();
+        return new Mahasiswa05(nim, nama, kelas, ipk);
+    }
 }

@@ -62,7 +62,7 @@ public class DoubleLinkedList05 {
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("Linked list masih kosong.");
+            System.out.println("Linked List masih kosong.");
             return;
         }
         Node05 current = head;
@@ -71,4 +71,43 @@ public class DoubleLinkedList05 {
             current = current.next;
         }
     }
+
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        Node05 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
+        }
+    }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+    }
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
+    }
+
 }
