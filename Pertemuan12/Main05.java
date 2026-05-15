@@ -65,6 +65,9 @@ public class Main05 {
                     System.out.println("Pilihan tidak valid");
             }
 
-        } while (pilih != 0);
+        } while (pilih != 0
+
+            
+        );
     }
 }
