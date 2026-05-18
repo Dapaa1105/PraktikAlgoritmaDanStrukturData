@@ -7,15 +7,19 @@ public class Main05 {
         Scanner scanner = new Scanner(System.in);
         AntrianPembeli05 antrian = new AntrianPembeli05();
         DaftarPesanan05 daftarPesanan = new DaftarPesanan05();
+
         int pilihan;
         int nomorAntrean = 1;
 
         do {
-            System.out.println("=== SISTEM ANTRIAN PEMBELI ===");
+            System.out.println("==============================");
+            System.out.println("SISTEM ANTRIAN PEMBELI");
+            System.out.println("==============================");
             System.out.println("1. Tambah Antrian");
             System.out.println("2. Tampilkan Antrian");
             System.out.println("3. Hapus Antrian");
-            System.out.println("4. Keluar");
+            System.out.println("4. Laporan Pesanan");
+            System.out.println("5. Keluar");
 
             System.out.print("Pilih menu: ");
             pilihan = scanner.nextInt();
@@ -39,17 +43,34 @@ public class Main05 {
                     break;
 
                 case 3:
-                    antrian.hapusAntrian();
+                    Pembeli05 deletedPembeli = antrian.hapusAntrian();
+                    if (deletedPembeli != null) {
+                        System.out.println("Pembeli yang dilayani: " + deletedPembeli.namaPembeli);
+                        System.out.print("Kode Pesanan: ");
+                        int kode = scanner.nextInt();
+                        scanner.nextLine();
+
+                        System.out.print("Nama Pesanan: ");
+                        String nama = scanner.nextLine();
+
+                        System.out.print("Harga: ");
+                        int harga = scanner.nextInt();
+                        scanner.nextLine();
+
+                        Pesanan05 pesanan = new Pesanan05(kode, nama, harga);
+                        daftarPesanan.tambahPesanan(pesanan);
+                    }
                     break;
 
                 case 4:
-                    System.out.println("Terima kasih!");
+                    daftarPesanan.sortPesanan();
+                    daftarPesanan.tampilPesanan();
                     break;
 
                 default:
                     System.out.println("Menu tidak valid.");
             }
-        } while (pilihan != 4);
+        } while (pilihan != 5);
 
     }
 

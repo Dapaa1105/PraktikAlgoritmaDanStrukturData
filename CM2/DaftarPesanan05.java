@@ -24,7 +24,33 @@ public class DaftarPesanan05 {
     public void tampilPesanan() {
         NodePesanan05 current = head;
         while (current != null) {
-            System.out.println("Kode Pesanan: " + current.data.kodePesanan + ", Nama Pesanan: " + current.data.namaPesanan + ", Total Harga: " + current.data.harga);
+            System.out.println("Kode Pesanan: " + current.data.kodePesanan);
+            System.out.println("Nama Pesanan: " + current.data.namaPesanan);
+            System.out.println("Harga: " + current.data.harga);
+            current = current.next;
+        }
+    }
+
+    public void sortPesanan() {
+        if (head == null) {
+            System.out.println("Daftar pesanan kosong, tidak ada yang perlu diurutkan.");
+            return;
+        }
+        NodePesanan05 current = head;
+        while (current != null) {
+            NodePesanan05 minNode = current;
+            NodePesanan05 nextNode = current.next;
+            while (nextNode != null) {
+                if (nextNode.data.namaPesanan.compareTo(minNode.data.namaPesanan) < 0) {
+                    minNode = nextNode;
+                }
+                nextNode = nextNode.next;
+            }
+            if (minNode != current) {
+                Pesanan05 temp = current.data;
+                current.data = minNode.data;
+                minNode.data = temp;
+            }
             current = current.next;
         }
     }

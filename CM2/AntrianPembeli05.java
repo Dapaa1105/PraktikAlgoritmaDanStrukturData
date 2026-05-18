@@ -24,22 +24,29 @@ public class AntrianPembeli05 {
     public void tampilAntrian() {
         NodePembeli05 current = head;
         while (current != null) {
-            System.out.println("No Antrean: " + current.data.noAntrean + ", Nama: " + current.data.namaPembeli + ", No HP: " + current.data.noHp);
+            System.out.println("No Antrean: " + current.data.noAntrean  );
+            System.out.println("Nama: " + current.data.namaPembeli);
+            System.out.println("No HP: " + current.data.noHp);
             current = current.next;
+        }
+        if (head == null) {
+            System.out.println("Antrian kosong.");
         }
     }
 
-    public void hapusAntrian() {
+    public Pembeli05 hapusAntrian() {
         if (head == null) {
             System.out.println("Antrian kosong.");
-            return;
+            return null;
         }
         System.out.println("Menghapus antrian dengan No Antrean: " + head.data.noAntrean);
+        Pembeli05 deletedPembeli = head.data;
         head = head.next;
         if (head != null) {
             head.prev = null;
         } else {
             tail = null; 
         }
+        return deletedPembeli;
     }
 }
