@@ -1,4 +1,4 @@
-package CM2;
+package CM2Final;
 
 import java.util.Scanner;
 
@@ -33,16 +33,8 @@ public class Main05 {
                     System.out.print("No HP: ");
                     String noHp = scanner.nextLine();
 
-                    System.out.print("Prioritas? (Ya/Tidak): ");
-                    String p = scanner.nextLine();
-
                     Pembeli05 pembeli = new Pembeli05(nomorAntrean, namaPembeli, noHp);
-                    if (p.equalsIgnoreCase("Ya")) {
-                        antrian.tambahPrioritas(pembeli);
-                    } else {
-                        antrian.tambahAntrian(pembeli);
-                    }
-
+                    antrian.tambahAntrian(pembeli);
                     nomorAntrean++;
                     break;
 

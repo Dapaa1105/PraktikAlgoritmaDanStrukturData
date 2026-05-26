@@ -1,4 +1,4 @@
-package CM2;
+package CM2Final;
 
 public class AntrianPembeli05 {
     NodePembeli05 head;
@@ -48,29 +48,6 @@ public class AntrianPembeli05 {
             tail = null;
         }
         return deletedPembeli;
-    }
-
-    public void tambahPrioritas(Pembeli05 pembeli) {
-        NodePembeli05 newNode = new NodePembeli05(pembeli);
-
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-            return;
-        }
-
-        if (head.next == null) {
-            head.next = newNode;
-            newNode.prev = head;
-            tail = newNode;
-            return;
-        }
-
-        newNode.next = head.next;
-        newNode.prev = head;
-
-        head.next.prev = newNode;
-        head.next = newNode;
     }
 
 }
