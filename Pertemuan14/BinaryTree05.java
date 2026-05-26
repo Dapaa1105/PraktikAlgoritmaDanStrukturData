@@ -17,9 +17,8 @@ public class BinaryTree05 {
             root = newNode;
         } else {
             Node05 current = root;
-            Node05 parent = null;
             while (true) {
-                parent = current;
+                Node05 parent = current;
                 if (mahasiswa.ipk < current.mahasiswa.ipk) {
                     current = current.left;
                     if (current == null) {
@@ -34,6 +33,63 @@ public class BinaryTree05 {
                     }
                 }
             }
+        }
+    }
+
+    public void addRekursif(Mahasiswa05 mahasiswa) {
+        root = addRekursifProses(root, mahasiswa);
+    }
+
+    private Node05 addRekursifProses(Node05 current, Mahasiswa05 mahasiswa) {
+        if (current == null) {
+            return new Node05(mahasiswa);
+        }
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursifProses(current.left, mahasiswa);
+        } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+            current.right = addRekursifProses(current.right, mahasiswa);
+        }
+        return current;
+    }
+
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+            return;
+        }
+        Node05 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.print("Mahasiswa IPK Terkecil -> ");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+            return;
+        }
+        Node05 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.print("Mahasiswa IPK Terbesar -> ");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        System.out.println("Daftar Mahasiswa dengan IPK di atas " + ipkBatas + ":");
+        tampilIPKdiAtasProses(root, ipkBatas);
+    }
+
+    private void tampilIPKdiAtasProses(Node05 node, double ipkBatas) {
+        if (node != null) {
+            tampilIPKdiAtasProses(node.left, ipkBatas);
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilInformasi();
+            }
+            tampilIPKdiAtasProses(node.right, ipkBatas);
         }
     }
 
