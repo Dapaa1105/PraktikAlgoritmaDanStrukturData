@@ -219,4 +219,61 @@ public class BinaryTree05 {
             }
         }
     }
+
+    public void cariBerdasarkanNama(String namaDicari) {
+        System.out.println("Hasil pencarian mahasiswa dengan nama \"" + namaDicari + "\":");
+        boolean[] ditemukan = { false };
+        cariNamaProses(root, namaDicari, ditemukan);
+        if (!ditemukan[0]) {
+            System.out.println("Mahasiswa dengan nama tersebut tidak ditemukan.");
+        }
+    }
+
+    private void cariNamaProses(Node05 node, String namaDicari, boolean[] ditemukan) {
+        if (node != null) {
+            cariNamaProses(node.left, namaDicari, ditemukan);
+            if (node.mahasiswa.nama.equalsIgnoreCase(namaDicari)) {
+                node.mahasiswa.tampilInformasi();
+                ditemukan[0] = true;
+            }
+            cariNamaProses(node.right, namaDicari, ditemukan);
+        }
+    }
+
+    public void cari3IPKTertinggi() {
+        System.out.println("=== 3 MAHASISWA DENGAN IPK TERTINGGI ===");
+        int[] counter = { 0 };
+        proses3IPKTertinggi(root, counter);
+    }
+
+    private void proses3IPKTertinggi(Node05 node, int[] counter) {
+        if (node != null && counter[0] < 3) {
+            proses3IPKTertinggi(node.right, counter);
+            if (counter[0] < 3) {
+                node.mahasiswa.tampilInformasi();
+                counter[0]++;
+            }
+            proses3IPKTertinggi(node.left, counter);
+        }
+    }
+
+    public void tampilkanMahasiswaPerKelas(String kelasDicari) {
+        System.out.println("Daftar Mahasiswa di Kelas " + kelasDicari + ":");
+        boolean[] ditemukan = { false };
+        tampilkanKelasProses(root, kelasDicari, ditemukan);
+        if (!ditemukan[0]) {
+            System.out.println("Tidak ada mahasiswa di kelas " + kelasDicari);
+        }
+    }
+
+    public void tampilkanKelasProses(Node05 node, String kelasDicari, boolean[] ditemukan) {
+        if (node != null) {
+            tampilkanKelasProses(node.left, kelasDicari, ditemukan);
+            if (node.mahasiswa.kelas.equalsIgnoreCase(kelasDicari)) {
+                node.mahasiswa.tampilInformasi();
+                ditemukan[0] = true;
+            }
+            tampilkanKelasProses(node.right, kelasDicari, ditemukan);
+        }
+    }
 }
